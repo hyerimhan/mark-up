@@ -1,0 +1,108 @@
+* {padding: 0; margin: 0;}
+
+ul,ol,li {list-style: none;}
+
+a {text-decoration: none; color: inherit;}
+
+.after::after {display: block; content: ""; clear: both;}
+
+body {
+    background: #f7f8f8;
+}
+
+#Wrap {
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 200px; 
+}
+
+#Wrap .inner h1 {
+    color: #20201f;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.add_app {
+    width: 100%;
+}
+
+.add_app button {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 100px;
+    padding: 15px;
+    background: #757b81;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #fff;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.add_app button:hover {
+    background: #5d6e81;
+    box-shadow: 10px 10px 10px #999;
+}
+
+.add_app button .plus {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: #5b9bd5;
+    float: left;
+    position: relative;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.add_app button:hover .plus {
+    background: #1f4e79;
+}
+
+.add_app button .plus::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.add_app button .plus::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 2px;
+    height: 25px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.add_app button h2 {
+    float: left;
+    line-height: 70px;
+}
+
+.app {
+    background: #fff;
+    height: 100px;
+    padding: 15px;
+    cursor: pointer;
+    /* display: none; */
+    width: 900px;
+    box-sizing: border-box;
+    margin: 20px auto 0;
+    transition: 0.3s;
+    border: 1px solid  #ddd;
+}
+
+.app:hover {
+    background: #f3f4fa;
+    box-shadow: 10px 10px 10px #999;
+}

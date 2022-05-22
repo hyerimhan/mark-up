@@ -1,0 +1,384 @@
+* {padding: 0; margin: 0;}
+
+ul,li,ol {list-style: none;}
+
+a {text-decoration: none; color: inherit;}
+
+.after::after {display: block; content: ""; clear: both;}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*** 기본정보 (왼쪽) ***/
+.infoWrap {
+    width: 40%;
+    height: 100vh;
+    float: left;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.info {
+    border-radius: 10px;
+    height: 100%;
+    background: #eceef0;
+    box-shadow: 0 0 10px #ccc;
+    overflow: hidden;
+    position: relative;
+}
+
+.info h1 {
+    width: 100%;
+    background: #2a3540;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.info_con {
+    width: 85%;
+    border-radius: 10px;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px #ddd;
+    background: #f7f7f7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: 25px;
+}
+
+.info_con li {
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.info_con li:first-child {
+    border-top: 2px solid #2a3540;
+}
+
+.info_con li:last-child {
+    margin-bottom: 0;
+    border-bottom: 2px solid #2a3540;
+}
+
+.info_con li>label {
+    width: 26%;
+    margin-right: 4%;
+    float: left;
+    text-align: right;
+    line-height: 30px;
+    color: #2a3540;
+    font-weight: bold;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.info_con li>input {
+    width: 70%;
+    float: left;
+    outline: none;
+    box-sizing: border-box;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px;
+}
+
+.info_con li>select {
+    width: 70%;
+    float: left;
+    height: 30px;
+}
+
+.info_con li>textarea {
+    width: 70%;
+    float: left;
+    box-sizing: border-box;
+    outline: none;
+    padding: 10px;
+}
+
+
+/*** API KEY, 서비스목록 (오른쪽) ***/
+.serviceWrap {
+    width: 60%;
+    padding: 50px;
+    padding-left: 0;
+    float: left;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* API_KEY */
+.API_KEY {
+    border-radius: 10px;
+    height: 40%;
+    background: #eceef0;
+    box-shadow: 0 0 10px #ccc;
+    overflow: hidden;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.API_KEY h1 {
+    width: 100%;
+    background: #2a3540;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.API_KEY .API_KEY_inner {
+    width: 90%;
+    border-radius: 10px;
+    padding: 35px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px #ddd;
+    background: #f7f7f7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: 25px;
+}
+
+.API_KEY_inner>li {
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.API_KEY_inner>li:first-child {
+    border-top: 2px solid #2a3540;
+}
+
+.API_KEY_inner>li:last-child {
+    margin-bottom: 0;
+    border-bottom: 2px solid #2a3540;
+}
+
+.API_KEY_inner>li>label {
+    width: 16%;
+    margin-right: 4%;
+    float: left;
+    text-align: right;
+    color: #2a3540;
+    font-weight: bold;
+    font-size: 13px;
+    box-sizing: border-box;
+    line-height: 30px;
+}
+
+.API_KEY_inner>li>input {
+    width: 80%;
+    float: left;
+    outline: none;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 10px;
+}
+
+.API_KEY_inner>li:nth-of-type(2) input {
+    width: 60%;
+    margin-right: 5%;
+}
+
+.API_KEY_inner>li:nth-of-type(2) button {
+    width: 15%;
+    line-height: 31px;
+    background: #5d6e81;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.API_KEY_inner>li:nth-of-type(2) button:hover {
+    background: #1983ca;
+
+}
+
+/* 서비스 목록 */
+.service_list {
+    border-radius: 10px;
+    height: 40%;
+    background: #eceef0;
+    box-shadow: 0 0 10px #ccc;
+    overflow: hidden;
+}
+
+.service_list h1 {
+    width: 100%;
+    background: #2a3540;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.service_list h1 button {
+    width: 25px;
+    height: 25px;
+    background: #5d6e81;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    margin-left: 25px;
+}
+
+.service_list h1 button span {
+    transition: 0.3s;
+    position: absolute;
+}
+
+.service_list h1 button span::after {
+    display: block;
+    content: "";
+    width: 2px;
+    height: 15px;
+    background: #fff;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.service_list h1 button span::before {
+    display: block;
+    content: "";
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.service_list h1 button:hover {
+    background: #1983ca;
+}
+
+.service_list h1 button:hover span {
+    transform: rotate(360deg);
+}
+
+.service_list .service_list_inner {
+    width: 90%;
+    border-radius: 10px;
+    padding: 35px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px #ddd;
+    background: #f7f7f7;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 250px;
+    position: relative;
+    overflow-y: auto;
+    margin-top: -20px;
+}
+
+.service_list_inner>li {
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.service_list_inner>li:first-child {
+    border-top: 2px solid #2a3540;
+}
+
+.service_list_inner>li:last-child {
+    margin-bottom: 0;
+    border-bottom: 2px solid #2a3540;
+}
+
+.service_list_inner>li>label {
+    width: 6%;
+    margin-right: 4%;
+    float: left;
+    text-align: right;
+    color: #2a3540;
+    font-weight: bold;
+    font-size: 13px;
+    box-sizing: border-box;
+    line-height: 30px;
+}
+
+.service_list_inner>li>input {
+    width: 90%;
+    float: left;
+    outline: none;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 10px;
+}
+
+/* 삭제, 저장버튼 */
+.button {
+    width: 30%;
+    position: relative;
+    bottom: -80px;
+    right: -770px;
+}
+
+.button li {
+    float: left;
+}
+
+.button>li>button {
+    width: 100%;
+    line-height: 40px;
+    background: #5d6e81;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.button>li button img {
+    width: 17px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20%;
+}
+
+.button>li button p {
+    text-align: right;
+    width: 70%;
+}
+
+.button>li>button:hover {
+    background: #1983ca;
+}
+
+.button>li:nth-of-type(1) {
+    width: 35%;
+    margin-right: 5%;
+}
+
+.button>li:nth-of-type(1) button {
+    background: red;
+}
+
+.button>li:nth-of-type(1) button:hover {
+    background: orange;
+}
+
+.button>li:nth-of-type(2) {
+    width: 60%;
+}

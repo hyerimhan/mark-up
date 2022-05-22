@@ -1,0 +1,667 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>통계지도</title>
+
+	<link type="text/css" href="css/default.css" rel="stylesheet">
+	<link type="text/css" href="css/perfect-scrollbar.css" rel="stylesheet">
+	<link type="text/css" href="css/fwall.css" rel="stylesheet">
+	<link type="text/css" href="css/iframeGis.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-1.7.0.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.11.4.min.js"></script>
+	<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+	<script type="text/javascript" src="js/gis1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(sizeContent);
+		$(window).resize(sizeContent);
+		$(document).ready(function () {
+			scroll();
+			scrollSize();
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<div class="conLeft">
+				<div class="map"></div>
+				<div class="map">map</div>
+				<div class="quickMenu">
+					<ul>
+						<li class="on">주제도</li>
+						<!-- 201118 추가 및 변경(quickMenu li 위치변경) & 선택지 추가 -->
+						<span>
+							<li>
+								<select name="선택지">
+									<option value="브이월드">브</option>
+									<option value="">이</option>
+									<option value="">월</option>
+									<option value="">드</option>
+								</select>
+							</li>
+							<li>국토부CCTV</li>
+						</span>
+						<!-- ** -->
+					</ul>
+				</div>
+				<div class="toolbox">
+					<!-- 201118 햄버거버튼 추가(레이어 관리 메뉴버튼) -->
+					<span class="menu"><i class="fas fa-bars"></i></span>
+					<!-- ** -->
+					<ul class="tool">
+						<li><span>확대</span></li>
+						<li><span>축소</span></li>
+						<li class="on" title="전체"><span>전체</span></li>
+						<li title="화면정리"><span>화면정리</span></li>
+						<li title="거리"><span>거리</span></li>
+						<li title="면적"><span>면적</span></li>
+					</ul>
+				</div><!-- //toolbox -->
+
+				<div class="gnb">
+					<ul>
+						<li class="on">검색</li>
+						<li>점용료설정</li>
+						<li>통계</li>
+					</ul>
+				</div>
+			</div><!-- //conLeft -->
+			<div class="conRight">
+				<!-- 201118 닫기 버튼 추가(레이어 관리 메뉴버튼) -->
+				<h2><i class="fas fa-arrow-alt-circle-right"></i>레이어관리<span class="conRight_close"><i
+							class="fas fa-times"></i></span></h2>
+				<!-- ** -->
+				<div class="rcontent" id="scroll1">
+					<div class="content">
+						<dl>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+							<dt class="up"><i class="fas fa-folder-open"></i><input type="checkbox">1d</dt>
+							<dd>
+								<ul>
+									<li><input type="checkbox"><span class="layerBox"></span>2d</li>
+									<li><input type="checkbox"><span class="layerBoxL"></span>2d</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+
+			</div><!-- //conLeft -->
+
+			<!-- left menu 움직임버튼 -->
+			<!-- <div class="gnb_tbt1" style="display:block;"></div>
+			<div class="gnb_tbt2" style="display:none;"></div> -->
+			<!-- //left menu 움직임버튼 -->
+
+
+		</div><!-- //container -->
+		<!-- popup--------------------------------------------------------------------------------------------- -->
+		<!-- 추가주제도 -->
+		<div class="popup w200" style="display:block">
+			<div class="bar">
+				<div class="title"><i class="fas fa-layer-group"></i>추가주제도</div>
+				<button class="closePop">닫기</button>
+			</div><!-- //bar -->
+
+			<!-- 201228 '추가주제도' 패널 수정 -->
+			<ul class="sub popContents" id="moGnb">
+				
+				<!-- 1depth -->
+				<li>
+					<a href="#">재난에 대한 POI 정보<i class="fas fa-caret-up"></i></a>
+					
+					<!-- 2depth -->
+					<ul class="sub sub2">
+						<li>
+							<a href="#">└ 화재 재난</a>
+							
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+						<li>
+							<a href="#">└ 풍수해 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+					</ul><!-- 2depth -->
+				</li><!-- 1depth -->
+
+				<!-- 1depth -->
+				<li>
+					<a href="#">출동중인 차량정보<i class="fas fa-caret-up"></i></a>
+					
+					<!-- 2depth -->
+					<ul class="sub sub2">
+						<li>
+							<a href="#">└ 화재 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+						<li>
+							<a href="#">└ 풍수해 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+					</ul><!-- 2depth -->
+				</li><!-- 1depth -->
+
+				<!-- 1depth -->
+				<li>
+					<a href="#">인근 대상물정보<i class="fas fa-caret-up"></i></a>
+					
+					<!-- 2depth -->
+					<ul class="sub sub2">
+						<li>
+							<a href="#">└ 화재 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+						<li>
+							<a href="#">└ 풍수해 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+					</ul><!-- 2depth -->
+				</li><!-- 1depth -->
+
+				<!-- 1depth -->
+				<li>
+					<a href="#">대상물 요약 POI<i class="fas fa-caret-up"></i></a>
+					
+					<!-- 2depth -->
+					<ul class="sub sub2">
+						<li>
+							<a href="#">└ 화재 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+						<li>
+							<a href="#">└ 풍수해 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+					</ul><!-- 2depth -->
+				</li><!-- 1depth -->
+
+				<!-- 1depth -->
+				<li>
+					<a href="#">출동차량 영상 POI<i class="fas fa-caret-up"></i></a>
+					
+					<!-- 2depth -->
+					<ul class="sub sub2">
+						<li>
+							<a href="#">└ 화재 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+						<li>
+							<a href="#">└ 풍수해 재난</a>
+
+							<!-- 3depth -->
+							<ul class="sub sub3">
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+								<li>
+									<a href="#">└ 3depth</a>
+
+									<!-- 4depth -->
+									<ul class="sub sub4">
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+										<li><a href="#">└ 4depth</a></li>
+									</ul><!-- 4depth -->
+								</li>
+							</ul><!-- 3depth -->
+						</li>
+					</ul><!-- 2depth -->
+				</li><!-- 1depth -->
+
+
+				<!-- <dl>
+					<dt class="up">재난에 대한 POI 정보<i class="fas fa-caret-up"></i></dt>
+					<dd>
+						<ul>
+							<li>• 화재 재난</li>
+							<li>• 풍수해 재난</li>
+						</ul>
+					</dd>
+					<dt class="up">출동중인 차량정보<i class="fas fa-caret-up"></i></dt>
+					<dd>
+						<ul>
+							<li>• 화재 재난</li>
+							<li>• 풍수해 재난</li>
+						</ul>
+					</dd>
+					<dt class="up">인근 대상물정보<i class="fas fa-caret-up"></i></dt>
+					<dd>
+						<ul>
+							<li>• 화재 재난</li>
+							<li>• 풍수해 재난</li>
+						</ul>
+					</dd>
+					<dt class="up">대상물 요약 POI<i class="fas fa-caret-up"></i></dt>
+					<dd>
+						<ul>
+							<li>• 화재 재난</li>
+							<li>• 풍수해 재난</li>
+						</ul>
+					</dd>
+					<dt class="up">출동차량 영상 POI<i class="fas fa-caret-up"></i></dt>
+					<dd>
+						<ul>
+							<li>• 화재 재난</li>
+							<li>• 풍수해 재난</li>
+						</ul>
+					</dd>
+				</dl> -->
+			</ul><!-- 201228 '추가주제도' 패널 수정 -->
+		</div><!-- //popup -->
+		<!-- //추가주제도 -->
+		<!-- 대상물 요약 정보 -->
+		<div class="popup w300" style="width:350px;display:block">
+			<div class="bar">
+				<div class="title"><i class="fas fa-globe"></i>대상물 요약 정보</div>
+				<button class="closePop">닫기</button>
+			</div><!-- //bar -->
+			<div class="popContents">
+				<div class="ptableBoard mgt10">
+					<table>
+						<tr>
+							<th>대상물 명칭</th>
+							<td>
+								<input type="text" class="ips" style="width:94%">
+							</td>
+						</tr>
+						<tr>
+							<th>대상물 정보</th>
+							<td>
+								<input type="text" class="ips" style="width:94%">
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="btGroup">
+					<button class="pbts1" style="width:110px"><i class="fas fa-check"></i> 상세정보확인</button>
+					<button class="pbts1"><i class="fas fa-times"></i> 취소</button>
+				</div>
+			</div><!-- //popContents -->
+		</div><!-- //popup -->
+		<!-- //대상물 요약 정보 -->
+		<!-- //popup--------------------------------------------------------------------------------------------- -->
+	</div><!-- //wrapper -->
+
+</body>
+
+</html>

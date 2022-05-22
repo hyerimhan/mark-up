@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/Object.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/Object.js"></script>
+</head>
+
+<body>
+
+    <div class="Object_Wrap">
+        <h1>특정소방대상물 정보</h1>
+        <div class="cp2-1">
+            <h4>1. 소방안전정보</h4>
+            <p>※ 특정소방대상물에 설치된 소방시설에만 체크합니다.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p>대상명</p>
+                        </th>
+                        <td colspan="2">
+                            <input type="text">
+                        </td>
+                        <th style="background: none;">
+                            <p>주용도</p>
+                        </th>
+                        <td style="border-right: 0;">
+                            <input type="text">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <p>소재지</p>
+                        </th>
+                        <td colspan="4" style="border-right: 0;">
+                            <input type="text">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="2">
+                            <p>관계인</p>
+                        </th>
+                        <th style="background: none;">
+                            <p>성명</p>
+                        </th>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <th rowspan="2" style="background: none;">
+                            <p>구분</p>
+                        </th>
+                        <td rowspan="2" style="border-right: 0;">
+                            <select>
+                                <option>소유자</option>
+                                <option>관리자</option>
+                                <option>점유자</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="background: none;">
+                            <p>연락처</p>
+                        </th>
+                        <td>
+                            <input type="tel">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="4">
+                            <p>화재보험</p>
+                        </th>
+                        <td colspan="4" style="border-right: 0;">
+                            <select>
+                                <option>가입</option>
+                                <option>미가입</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="background: none;">
+                            <p>보험사</p>
+                        </th>
+                        <td colspan="3" style="border-right: 0;">
+                            <input type="text">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="background: none;">
+                            <p>가입기간</p>
+                        </th>
+                        <td colspan="3" style="border-right: 0;">
+                            <input type="date" style="width: 47%;">
+                            <p style="width: 6%;">~</p>
+                            <input type="date" style="width: 47%;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="background: none;">
+                            <p>가입금액</p>
+                        </th>
+                        <td colspan="3" style="border-right: 0;">
+                            <div class="after" style="width:50%; float: left;">
+                                <p style="width: 33.3333%;">대인 (</p><input type="text" style="width: 33.3333%;">
+                                <p style="width: 33.3333%;">) 천만원</p>
+                            </div>
+                            <div class="after" style="width:50%;  float: left;">
+                                <p style="width: 33.3333%;">대물 (</p><input type="text" style="width: 33.3333%;">
+                                <p style="width: 33.3333%;">) 천만원</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <p>다중이용업소<br>현황</p>
+                        </th>
+                        <td colspan="4" style="border-right: 0;" class="ckbox">
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>휴게음식점영업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>제과점영업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>일반음식점영업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>단란주점영업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>유흥주점영업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>영화상영관</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>비디오물감상실업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>비디오물소극장업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>복합영상물제공업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>학원</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>독서실</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>목욕장업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>찜질방업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>게임제공업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>인터넷컴퓨터게임시설제공업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>복합유통게임제공업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>노래연습장업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>산후조리업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>고시원업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>권총사격장</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>골프연습장업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>안마시술소</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>전화방업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>화상대화방업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>수면방업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>콜라텍업</p>
+                                    <span class="after">
+                                        <p>(</p><input type="text" disabled>
+                                        <p>개소)</p>
+                                    </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>해당없음</p>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cp2-2">
+            <h4>2. 건축물 정보</h4>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p>건축허가일</p>
+                        </th>
+                        <td>
+                            <input type="date">
+                        </td>
+                        <th>
+                            <p>사용승인일</p>
+                        </th>
+                        <td>
+                            <input type="date">
+                        </td>
+                        <th>
+                            <p>층수</p>
+                        </th>
+                        <td style="border-right: 0;">
+                            지상<input type="text">층 /<span> 지하<input type="text">층</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <p>연면적</p>
+                        </th>
+                        <td>
+                            <input type="text">㎡
+                        </td>
+                        <th>
+                            <p>건축면적</p>
+                        </th>
+                        <td>
+                            <input type="text">㎡
+                        </td>
+                        <th>
+                            <p>높이</p>
+                        </th>
+                        <td style="border-right: 0;">
+                            <input type="text">m
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <p>건축물구조</p>
+                        </th>
+                        <td>
+                            <select>
+                                <option>콘크리트구조</option>
+                                <option>철골구조</option>
+                                <option>조적조</option>
+                                <option>목구조</option>
+                                <option>기타</option>
+                            </select>
+                        </td>
+                        <th>
+                            <p>지붕구조</p>
+                        </th>
+                        <td>
+                            <select>
+                                <option>슬라브</option>
+                                <option>기와</option>
+                                <option>슬레이트</option>
+                                <option>기타</option>
+                            </select>
+                        </td>
+                        <th>
+                            <p>경사로</p>
+                        </th>
+                        <td style="border-right: 0;">
+                            <input type="text">개소
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>계단</p>
+                        </th>
+                        <td>
+                            <select>
+                                <option>직통 (또는 피난계단)</option>
+                                <option>특별피난계단</option>
+                            </select>
+                            <input type="text">개소
+                        </td>
+                        <th>
+                            <p>승강기</p>
+                        </th>
+                        <td>
+                            <select>
+                                <option>승용</option>
+                                <option>비상용</option>
+                                <option>피난용</option>
+                            </select>
+                            <input type="text">대
+                        </td>
+                        <th>
+                            <p>주차장</p>
+                        </th>
+                        <td style="border-right: 0;">
+                            <select>
+                                <option>옥내 (지하)</option>
+                                <option>옥내 (지상)</option>
+                                <option>옥내 (필로티)</option>
+                                <option>옥내 (기계식)</option>
+                                <option>옥상</option>
+                                <option>옥외</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

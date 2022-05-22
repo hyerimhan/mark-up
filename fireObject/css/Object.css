@@ -1,0 +1,347 @@
+* {padding: 0; margin: 0;}
+
+ul, li, ol {list-style: none;}
+
+a {text-decoration: none; color: inherit;}
+
+.after::after {display: block; content: ""; clear: both;}
+
+
+textarea {
+    resize: none;
+}
+
+input:focus[type="text"] {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #bbb;
+}
+
+select {
+    margin-right: 1%;
+    float: left;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    border-image: initial;
+    border-radius: 3px;
+    transition: all 0.2s ease 0s;
+}
+
+/* 소방대상물 정보 */
+.Object_Wrap {
+    overflow-y: auto;
+}
+
+.Object_Wrap>h1 {
+    color: #111f37;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.Object_Wrap table {
+    border-top: 1px solid #76849e;
+    border-bottom: 1px solid #76849e;
+    box-sizing: border-box;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.Object_Wrap h4 {
+    color: #76849e;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 15px;
+    margin: 30px auto 10px;
+}
+
+.Object_Wrap .cp2-1>p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #bbb;
+}
+
+.Object_Wrap table tbody th {
+    background: #f8f9fc;
+    border-bottom: 1px solid #ddd;
+    line-height: 40px;
+    color: #111f37;
+    width: 10%;
+    border-right: 1px solid #ddd;
+}
+
+.Object_Wrap table tbody td {
+    font-weight: normal;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.Object_Wrap table tbody td input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+.Object_Wrap table tbody td input:focus {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #bbb;
+}
+
+.Object_Wrap table tbody .ckbox div {
+    width: 26.6666%;
+    margin-right: 10%;
+    float: left;
+}
+
+.Object_Wrap table tbody .ckbox div:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.Object_Wrap table tbody .ckbox div input[type="checkbox"] {
+    width: 5%;
+    margin: 7px 0;
+}
+
+.Object_Wrap table tbody label {
+    cursor: pointer;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.Object_Wrap table tbody .ckbox div label>p {
+    text-align: left;
+}
+
+/* 소방안전정보 */
+.Object_Wrap table {
+    border-spacing: 0;
+}
+
+.cp2-1 table tbody th {
+    width: 10%;
+}
+
+.cp2-1 table tbody td {
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+/* .cp2-1 table tbody td:nth-of-type(1) {
+    width: 10%;
+} */
+
+/* .cp2-1 table tbody .cp2-11 td:last-child {
+    width: 50%;
+} */
+
+.cp2-1 table tbody td select {
+    font-size: 12px;
+}
+
+.cp2-1 table tbody td:nth-of-type(2) {
+    width: 11%;
+}
+
+.cp2-1 table tbody td:nth-of-type(3) {
+    width: 20%;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label {
+    cursor: pointer;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label p {
+    line-height: 25px;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label>input:nth-of-type(1) {
+    width: 10%;
+    float: left;
+    margin: 5px 0;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label p:nth-of-type(1) {
+    width: 55%;
+    float: left;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label span {
+    width: 35%;
+    float: left;
+    display: block;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label span p:nth-of-type(1) {
+    width: 10%;
+    float: left;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label span input {
+    width: 50%;
+    margin-bottom: 3px;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label span input:disabled {
+    background: #eee;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label span p:nth-of-type(2) {
+    width: 40%;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label:last-child {
+    width: 100%;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label:last-child span {
+    width: 35%;
+}
+
+.cp2-1 table tbody .cp2-11 td:nth-of-type(3) label:last-child span input {
+    width: 25%;
+}
+
+.cp2-1 table tbody td select {
+    width: 100%;
+}
+
+.cp2-1 table tbody tr:nth-of-type(1) td:nth-of-type(4) label p {
+    float: left;
+}
+
+.cp2-1 table tbody tr input[type="checkbox"]:focus {
+    box-shadow: none;
+}
+
+.cp2-1 table tbody tr:nth-of-type(5) label {
+    display: block;
+    width: 33.3333%;
+    float: left;
+}
+
+.cp2-1 table tbody tr:nth-of-type(5) label p {
+    width: 5%;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.cp2-1 table tbody tr:nth-of-type(5) td input {
+    width: 65%;
+}
+
+.cp2-1 table tbody tr:nth-of-type(5) td p:nth-of-type(2) {
+    width: 5%;
+    margin-left: 35%;
+    margin-top: 5px;
+}
+
+.cp2-1 table tbody tr:nth-of-type(5) td input:nth-of-type(2) {
+    margin-top: 5px;
+    width: 60%;
+}
+
+.cp2-1 table tbody tr:nth-of-type(6) td span {
+    width: 65%;
+    display: block;
+    float: left;
+}
+
+.cp2-1 table tbody tr:nth-of-type(6) td span:nth-of-type(2) {
+    margin-left: 35%;
+    margin-top: 5px;
+}
+
+.cp2-1 table tbody tr:nth-of-type(6) td span p {
+    width: 30%;
+}
+
+.cp2-1 table tbody tr:nth-of-type(6) td span input {
+    width: 20%;
+}
+
+.cp2-1 table tbody td p {
+    float: left;
+    width: 50%;
+    line-height: 27px;
+}
+
+.cp2-1 table tbody td span p {
+    width: 10%;
+}
+
+.cp2-1 table tbody td span input {
+    width: 25%;
+}
+
+.cp2-1 table tbody td input {
+    float: left;
+    width: 100%;
+}
+
+/* 건축물 정보 */
+.cp2-2 table {
+    margin-bottom: 40px;
+}
+
+.cp2-2 table tbody td {
+    width: 20%;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.cp2-2 table tbody tr:nth-of-type(1) td:nth-of-type(3) input {
+    width: 20%;
+    padding: 5px;
+}
+
+.cp2-2 table tbody tr:nth-of-type(2) input {
+    width: 94%;
+    padding: 5px;
+}
+
+.cp2-2 table tbody tr:nth-of-type(3) td select {
+    padding: 5px;
+    width: 100%;
+}
+
+.cp2-2 table tbody tr:nth-of-type(3) td:nth-of-type(3) input {
+    width: 88%;
+    padding: 5px;
+}
+
+.cp2-2 table tbody tr:nth-of-type(4) td:nth-of-type(1) select {
+    padding: 5px;
+    width: 55%;
+}
+
+.cp2-2 table tbody tr:nth-of-type(4) td:nth-of-type(1) input {
+    width: 30%;
+    padding: 6px;
+}
+
+.cp2-2 table tbody tr:nth-of-type(4) td:nth-of-type(2) select {
+    padding: 5px;
+    width: 55%;
+}
+
+.cp2-2 table tbody tr:nth-of-type(4) td:nth-of-type(2) input {
+    width: 30%;
+    padding: 6px;
+}
+
+.cp2-2 table tbody tr:nth-of-type(4) td:nth-of-type(3) select {
+    width: 100%;
+    padding: 5px;
+}

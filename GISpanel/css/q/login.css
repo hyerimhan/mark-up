@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+html {overflow:auto;}
+body {background:url(../img/login/bg_logintop1.jpg) center -0px no-repeat, url(../img/login/bg_logintop2.jpg) center 590px no-repeat;}
+button {outline:none;cursor:pointer;}
+
+#wrapper {min-height:700px;}
+
+
+#loginBox {width:580px;height:554px;background:rgba(27,72,111,.9);position:relative;top:0px;left:50%;margin-left:-290px;}
+#loginBox .title {width:524px;height:59px;margin:45px 0 0 28px;background:url(../img/login/logo_login.png) 0 0 no-repeat;text-indent:-9999px;float:left;}
+#loginBox .idBox {width:449px;height:49px;margin:45px 0 0 68px;background:url(../img/login/bg_ipID.png) 0 0 no-repeat;float:left;}
+#loginBox .pwBox {width:449px;height:49px;margin:45px 0 0 68px;background:url(../img/login/bg_ipPW.png) 0 0 no-repeat;float:left;}
+#loginBox .ckBox {width:100%;padding:20px 0 30px 0;text-align:center;color:#fff;font-size:14px;float:left;}
+#loginBox  input.ipt1 {width:350px;height:40px;margin-top:13px;background:none;font:normal 18px 'NanumSquareR';color:#fff;border:0px solid #000;}
+#loginBox  input.iptc {width:16px;height:16px;}
+#loginBox .btBox {width:100%;text-align:center;float:left;}
+#loginBox .btBox button.login {width:281px;height:56px;border:none;background:url(../img/login/bt_login.png) 0 0 no-repeat;text-indent:-9999px;}
+#loginBox .btBox button.sc {margin:0 25px;border:none;background:none;color:#fff;font:normal 14px 'notokr-regular';}
+#loginBox .btBox button.join {margin:0 25px;border:none;background:none;color:#fff;font:normal 14px 'notokr-regular';}
+
+input::-ms-input-placeholder,
+input::-webkit-input-placeholder,
+input::-moz-placeholder { color: #fff;opacity:0.3;}
+input::placeholder {color:#fff;opacity:0.3;}
+input {outline:none;}
+
+
+.pd30 {padding:30px 0;}
+
+
+#loginBox #footer {width:100%;padding:15px 0;font-size:13px;color:#b2bdc8;text-align:center;float:left;}
+
+
+.popupBg {width:100%;height:100%;background:rgba(0,0,0,.7);position:absolute;top:0;left:0;z-index:999;display:none;}
+
+.popup {background:#f3f3f3;border-radius:5px 5px 5px 5px;position:absolute;}
+.popup .title {width:100%;height:50px;background:#333;border-radius:4px 4px 0 0;font:normal 18px/50px 'NanumSquareB';color:#fff;text-align:center;}
+.popup .title i {margin-right:5px;color:#ddd;font-size:20px;color:#9dc2df;vertical-align:middle;}
+.popup .popupClose {width:30px;height:30px;color:#fff;font-size:40px;position:absolute;left:50%;margin-left:-15px;top:-60px;}
+.popup .popCon {width:90%;padding:5%;border-radius:0 0 5px 5px;}
+.popup .popCon .stitle {width:100%;margin-bottom: 10px;font-size:14px;color:#333;font-weight: bold;}
+.popup .popCon .stitle span {color:#2377e9;}
+.popup .popCon .txt {width:96%;padding:2%;height:60px;margin-bottom: 20px;background:#fff;font-size:12px;line-height:16px;color:#333;word-break:break-all;overflow-y:auto;overflow-x:hidden;}
+.popup .popCon p {text-align: center;font-size: 14px;font-weight: bold;color: #333;vertical-align: middle;}
+.popup .popCon table {width:100%;margin-bottom: 20px;}
+.popup .popCon table th {width:33%;padding:15px 5px 15px 0;font-size:13px;text-align: right;color: #333;}
+.popup .popCon .bt {width:100%;padding:15px 0 10px 0;margin:10px 0 0 0;border-top:1px dashed #ccc;text-align:center;}
+
+.w350 {width:350px;left:50%;margin-left:-150px;top:100px;}
+.w370 {width:370px;left:50%;margin-left:-165px;top:100px;}
+
+span.subs {margin-left:5px;font-size:12px;color:#e77537;}
+input.pips1 {width:61%;height:22px;margin-right:3px;text-indent:5px;color:#333;}
+input.pips2 {width:155px;height:24px;text-indent:5px;color:#333;}
+input.pips3 {width:86%;height:22px;margin-right:3px;text-indent:5px;color:#333;}
+
+textarea.ptas1 {width:89.5%;height:180px;padding:5%;font:normal 14px/20px '¸¼Àº °íµñ','Nanum Gothic';}
+textarea.ptas2 {width:90%;height:180px;padding:5%;font:normal 14px/20px '¸¼Àº °íµñ','Nanum Gothic';}
+
+button {cursor:pointer;}
+button.pok {width: 100%;height: 40px;line-height: 40px;border:none;border-radius:5px;background:#3b97d3;text-align:center;color:#fff;font-weight: bold;font-size: 14px;}
+button.butn1 {padding:4px 5px;border:none;border-radius:5px;background:#3b97d3;text-align:center;color:#fff;font-weight: bold;font-size: 12px;}
+button.pno {width:80px;height:40px;line-height: 40px;border:none;border-radius:5px;background:#777;text-align:center;color:#fff;font-weight: bold;font-size: 14px;}

@@ -1,0 +1,251 @@
+* {padding: 0; margin: 0;}
+
+ul,ol,li {list-style: none;}
+
+a {text-decoration: none; color: inherit;}
+
+.after::after {display: block; content: ""; clear: both;}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*** 네비게이션 (왼쪽) ***/
+.navWrap {
+    width: 20%;
+    height: 100vh;
+    float: left;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.nav {
+    border-radius: 10px;
+    height: 100%;
+    overflow: hidden;
+    background: #eceef0;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.nav h1 {
+    width: 100%;
+    background: #2a3540;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+/* 검색버튼 */
+.search {
+    padding: 10px 20px;
+}
+
+label .searchTerm {
+    width: 85%;
+    height: 30px;
+    outline: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+    float: left;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #d2d6de;
+    font-size: 13px;
+    transition: 0.3s;
+    border-right: 0;
+}
+
+label .searchTerm:focus {
+    line-height: 30px;
+}
+
+label input {
+    /* position: relative; */
+}
+
+label .searchButton {
+    width: 15%;
+    height: 30px;
+    border: 1px solid #d2d6de;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+    float: left;
+    border-radius: 0 5px 5px 0;
+    font-size: 15px;
+}
+
+label .searchButton img {
+    width: 50%;
+    height: 50%;
+}
+
+/* 컨트롤러 */
+.controller {
+    padding: 10px 20px;
+    overflow-y: auto;
+}
+
+.controller ul {
+    color: #999;
+    font-size: 13px;
+    /* border-bottom: 1px solid #ddd; */
+    position: relative;
+}
+
+.controller ul>a {
+    display: block;
+    padding: 10px;
+}
+
+.controller ul.on>a {
+    background: #5d6e81;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+.controller ul>a img {
+    position: absolute;
+    right: 15%;
+    opacity: 0;
+    transition: 0.3s;
+    width: 10px;
+    height: 15px;
+}
+
+.controller ul.on>a img {
+    right: 5%;
+    opacity: 1;
+}
+
+.controller ul>li {
+}
+
+.controller ul>li>a {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.controller ul>li:last-child>a {
+    border-bottom: 0;
+}
+
+.controller ul>.sub {
+    background: #e7e7e7;
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+    display: none;
+}
+
+.controller ul>.sub li {
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+    color: #aaa;
+}
+
+.controller ul>a.on>img {
+    transform: rotate(90deg);
+}
+
+.controller ul>.sub li:hover {
+    color: #5d6e81;
+    font-weight: bold;
+}
+
+
+/*** 패널 (오른쪽) ***/
+.panelWrap {
+    width: 80%;
+    height: 100vh;
+    float: left;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.panel {
+    width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #ccc;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.panel::-webkit-scrollbar {
+    display: none;
+}
+
+/* 헤더 */
+.header {
+    background: #2a3540;
+    width: 900px;
+    border-radius: 10px 10px 0 0;
+    padding: 0 30px;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 999;
+}
+
+.header h1 {
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+/* 내용 */
+.con_inner {
+    padding: 30px 50px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    margin-top: 70px;
+}
+
+.con_inner li {
+    margin-bottom: 50px;
+}
+
+.con_inner li:last-child {
+    margin-bottom: 0;
+}
+
+/* 내용 - 소제목 */
+.con_inner li>p {
+    color: #111111;
+    font-weight: bold;
+}
+
+.con_inner li span {
+    background: #5d6e81;
+    width: 20px;
+    height: 20px;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    float: left;
+    position: relative;
+    margin-right: 10px;
+}
+
+.con_inner li span img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 7px;
+    height: 10px;
+}
+
+/* 내용 - 내용물 */
+.con_inner li>div {
+    border-bottom: 1px solid #e2e4ee;
+    padding: 30px 0 50px;
+}
+
+.con_inner li:last-child>div {
+    border-bottom: 0px;
+}

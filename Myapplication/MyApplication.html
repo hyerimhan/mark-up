@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/MyApplication.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/MyApplication.js"></script>
+</head>
+
+<body>
+
+    <!-- 기본정보 (왼쪽) -->
+    <div class="infoWrap">
+        <div class="info">
+            <h1>기본정보</h1>
+
+            <ul class="info_con">
+                <li class="after">
+                    <label>애플리케이션 명</label>
+                    <input type="text" name="text">
+                </li>
+                <li class="after">
+                    <label>신청자(소유자)</label>
+                    <input type="text" name="name" disabled>
+                </li>
+                <li class="after">
+                    <label>기관</label>
+                    <select>
+                        <option>소방청</option>
+                        <option>소방청</option>
+                        <option>소방청</option>
+                    </select>
+                </li>
+                <li class="after">
+                    <label>조직</label>
+                    <select>
+                        <option>경기소방본부</option>
+                        <option>서울소방본부</option>
+                        <option>서울특별시 구조구급시스템</option>
+                        <option>부산소방본부</option>
+                        <option>대구소방본부</option>
+                        <option>인천소방본부</option>
+                    </select>
+                </li>
+                <li class="after">
+                    <label>신청일자</label>
+                    <input type="text" disabled>
+                </li>
+                <li class="after">
+                    <label>상태</label>
+                    <input type="text" disabled>
+                </li>
+                <li class="after">
+                    <label>반려사유</label>
+                    <textarea name="" id="" cols="40" rows="10"></textarea>
+                </li>
+            </ul>
+
+        </div>
+    </div><!-- 기본정보 (왼쪽) -->
+
+    <!-- API KEY , 서비스목록 (오른쪽) -->
+    <div class="serviceWrap">
+
+        <!-- API KEY -->
+        <div class="API_KEY">
+            <h1>API KEY</h1>
+
+            <ul class="API_KEY_inner">
+                <li class="after">
+                    <label>KEY 값</label>
+                    <input type="text" disabled>
+                </li>
+                <li class="after">
+                    <label>만료일자</label>
+                    <input type="text" disabled>
+                    <button type="button">재발급</button>
+                </li>
+            </ul>
+        </div><!-- API KEY -->
+
+        <!-- 서비스 목록 -->
+        <div class="service_list">
+            <h1>서비스목록<button type="button"><span></span></button></h1>
+            
+            <ul class="service_list_inner">
+                <li class="after">
+                    <label>1</label>
+                    <input type="text" disabled placeholder="대상물 서비스">
+                </li>
+            </ul>
+        </div><!-- 서비스 목록 -->
+
+        <!-- 삭제, 저장버튼 -->
+        <ul class="button">
+            <li><button type="button"><img src="img/trash-alt-regular.png" alt=""><p>삭제</p</button></li>
+            <li><button type="submit"><img src="img/file-invoice-solid.png" alt=""><p>저장 (신청)</p></button></li>
+        </ul><!-- 삭제, 저장버튼 -->
+    </div><!-- API KEY , 서비스목록 (오른쪽) -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,587 @@
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>대상물 정보 조회</title>
+    <link rel="stylesheet" href="css/default_popup.css" data-inprogress="" />
+    <link rel="stylesheet" href="css/layout_popup.css" data-inprogress="" />
+    <link rel="stylesheet" href="css/tinyscrollbar.css" data-inprogress="" />
+    <link rel="stylesheet" href="css/layout.css" data-inprogress="" />
+    <link rel="stylesheet" href="css/common.css" data-inprogress="" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/main_design.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/ap-image-zoom.css" type="text/css" media="screen" />
+
+    <!-- jqxgrid tree -->
+    <!-- <link rel="stylesheet" href="../../../css/jqgrid/ui.jqgrid.css" type="text/css" media="screen" /> -->
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/jqwidgets/jqxcore.js"></script>
+    <script src="js/jqwidgets/jqxtree.js"></script>
+
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/jquery.tinyscrollbar.min.js"></script>
+    <script type="text/javascript" src="js/classDefaultLVPage.js"></script>
+    <script type="text/javascript" src="js/baseListView.js"></script>
+    <script type="text/javascript" src="js/baseTop.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/JsonManagement.js"></script>
+    <script type="text/javascript" src="js/RestWrapper.js"></script>
+    <script type="text/javascript" src="js/Binder.js"></script>
+    <script type="text/javascript" src="js/fss/fssObjects.js"></script>
+    <script type="text/javascript" src="js/fss/fssObjectsDetail.js"></script>
+    <script type="text/javascript" src="js/fss/brief.js"></script>
+    <script type="text/javascript" src="js/fss/cludedPlace.js"></script>
+    <script type="text/javascript" src="js/fss/danger.js"></script>
+    <script type="text/javascript" src="js/fss/research.js"></script>
+    <script type="text/javascript" src="js/fss/inspection.js"></script>
+    <script type="text/javascript" src="js/fss/map.js"></script>
+    <script type="text/javascript" src="js/fss/strtgmap.js"></script>
+    <script type="text/javascript" src="js/fss/fsseMap.js"></script>
+    <script type="text/javascript" src="js/fss/elevators.js"></script>
+    <script type="text/javascript" src="js/fss/hlhntrmt.js"></script>
+    <script type="text/javascript" src="js/fss/specialMatter.js"></script>
+    <script type="text/javascript" src="js/fss/illegalbuidings.js"></script>
+    <script type="text/javascript" src="js/fss/fireHistory.js"></script>
+    <script type="text/javascript" src="js/fss/foajRkft.js"></script>
+    <script type="text/javascript" src="js/fss/gisMap.js"></script>
+    <script type="text/javascript" src="js/ap-image-zoom.js"></script>
+    <script src="js/custom_popup.js"></script>
+    <script src="js/ap-image-zoom.js"></script>
+    <script type="text/javascript">
+        //주소
+        var fssObjGisUrl = "<spring:eval expression='@comm["
+        FSS_OBJ_GIS_URL "]'/>";
+
+        var outerParam = new Object();
+        outerParam.APIKEY = "<c:out value="
+        $ {
+            param.APIKEY
+        }
+        "/>";
+        outerParam.USERID = "<c:out value="
+        $ {
+            param.USERID
+        }
+        "/>";
+        outerParam.query = "<c:out value="
+        $ {
+            param.query
+        }
+        "/>";
+        outerParam.curCpfsOgid = "<c:out value="
+        $ {
+            param.curCpfsOgid
+        }
+        "/>";
+        outerParam.offsTyCd = "<c:out value="
+        $ {
+            param.offsTyCd
+        }
+        "/>";
+        outerParam.sidoCd = "<c:out value="
+        $ {
+            param.sidoCd
+        }
+        "/>";
+        outerParam.siggCd = "<c:out value="
+        $ {
+            param.siggCd
+        }
+        "/>";
+        outerParam.emdCd = "<c:out value="
+        $ {
+            param.emdCd
+        }
+        "/>";
+        outerParam.lic = "<c:out value="
+        $ {
+            param.lic
+        }
+        "/>";
+        outerParam.rnCd = "<c:out value="
+        $ {
+            param.rnCd
+        }
+        "/>";
+        outerParam.cpfsOgid = "<c:out value="
+        $ {
+            param.cpfsOgid
+        }
+        "/>";
+        outerParam.cpfcOgid = "<c:out value="
+        $ {
+            param.cpfcOgid
+        }
+        "/>";
+        outerParam.mtbjAt = "<c:out value="
+        $ {
+            param.mtbjAt
+        }
+        "/>";
+        outerParam.mbnj = "<c:out value="
+        $ {
+            param.mbnj
+        }
+        "/>";
+        outerParam.sbnj = "<c:out value="
+        $ {
+            param.sbnj
+        }
+        "/>";
+        outerParam.mbno = "<c:out value="
+        $ {
+            param.mbno
+        }
+        "/>";
+        outerParam.sbno = "<c:out value="
+        $ {
+            param.sbno
+        }
+        "/>";
+        outerParam.queryText = "<c:out value="
+        $ {
+            param.queryText
+        }
+        "/>";
+        outerParam.epsg = "<c:out value="
+        $ {
+            param.epsg
+        }
+        "/>";
+        outerParam.xcdn = "<c:out value="
+        $ {
+            param.xcn
+        }
+        "/>";
+        outerParam.ycdn = "<c:out value="
+        $ {
+            param.ycn
+        }
+        "/>";
+        outerParam.radius = "<c:out value="
+        $ {
+            param.radius
+        }
+        "/>";
+        outerParam.egrcAsmCd = "<c:out value="
+        $ {
+            param.egrcAsmCd
+        }
+        "/>";
+    </script>
+
+    <style>
+        #progressbar {
+            margin-top: 20px;
+        }
+
+        .progress-label {
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #fff;
+        }
+
+        .ui-dialog-titlebar-close {
+            display: none;
+        }
+
+        .searchBox {
+            width: 85%;
+        }
+
+        .gubunDiv button {
+            color: #ffffff;
+            text-align: center;
+            font-weight: 600;
+            font-size: 12px;
+            border-radius: 2px;
+            letter-spacing: -1px;
+            width: 50px;
+            line-height: 19px;
+            height: 26px;
+            margin-right: 5px;
+            border: 1px solid black;
+        }
+
+        .gubunDiv #gi_sobang:hover {
+            cursor: pointer;
+        }
+
+        .gubunDiv #gi_gookto:hover {
+            cursor: pointer;
+        }
+
+        .gubunDiv #gi_hwaje:hover {
+            cursor: pointer;
+        }
+
+        .gubunDiv #gi_sobang.active {
+            background: #49cc90;
+        }
+
+        .gubunDiv #gi_gookto.active {
+            background: #fca130;
+        }
+
+        .gubunDiv #gi_hwaje.active {
+            background: red;
+
+        }
+
+        input {
+            vertical-align: middle;
+        }
+
+        input.form-text {
+            border: 1px solid #bcbcbc;
+            height: 28px;
+        }
+
+        input.img-button {
+            background: url("/dwapi/images/info48.png") no-repeat;
+            border: none;
+            background-size: 25px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+        }
+
+        input.img-printButton {
+            background: url("/dwapi/images/print48.png") no-repeat;
+            border: none;
+            background-size: 26px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+        }
+
+        input.img-opgButton {
+            background: url("/dwapi/images/opg48.png") no-repeat;
+            border: none;
+            background-size: 20px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+        }
+
+        input.img-apiSearch {
+            background: url("/dwapi/images/popup_search.png") no-repeat;
+            border: none;
+            background-size: 20px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+        }
+
+        .tapLeftMenu {
+            clear: both;
+            display: flex;
+            width: 100%;
+        }
+
+        .tapLeftMenu .btn__big--orange:hover {
+            background: #f57637;
+        }
+
+        .tapLeftMenu a[class^='btn__'] {
+            display: inline-block;
+            text-align: center;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .tapLeftMenu .btn__big--orange {
+            width: 50%;
+            background: #f08933;
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 30px;
+            border: 1px solid;
+            background: #303030;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="popupWrap">
+        <div class="popupBox style1" id="fssObjectsSearchBox" style="overflow: hidden;">
+
+            <div class="popupBox__top">
+                <h3 style="float: left;">대상물 정보 조회</h3>
+                <!--
+        <a href="#" class="popup__close" title="닫기"><span class="blind">닫기</span></a>
+        -->
+                <div id="toggleWrap" style="padding: 20px;">
+                    <div style="display: flex;position: relative;float: right;top: 25%;">
+                        <div class="ToggleButton" style="display:none;">
+                            <div class="checkbox">
+                                <input type="checkbox" style="margin-left:0px" />
+                                <label></label>
+                            </div>
+                        </div>
+                        <div style="float: right;width: 93px;display: flex;">
+                            <h4 style="margin-top: 5px;">도움말</h4>
+                            <input class="img-button" type="button" id="infoOffs"
+                                style="margin-left: 5px;margin-top: 2px;">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- // popupBox__top -->
+            <div class="popupBox__content">
+                <div id="content">
+                    <div class="left" id="leftDivSearch" style="left: -595px; height: calc(100vh - 270px);">
+                        <!-- <div class="tapLeftMenu">
+                            <a href="#" class="btn__big--orange" id="sidoOptSearch"
+                                style="border-bottom:none; border-left:none;border-color: grey;">주소검색</a>
+                            <a href="#" class="btn__big--orange" id="gisOptSearch"
+                                style="border-top:none;border-right:none;border-color: grey;">공간검색</a>
+                        </div> -->
+                        <div class="left__search boxmodel" id="leftSearchArea">
+                            <h4>상세검색</h4>
+
+                            <div class="boxmodel_inner">
+                                <table>
+                                    <tr>
+                                        <th>화재발생일자</th>
+                                        <td class="boxmodelDate" colspan="3">
+                                            <input type="date"><span>~</span><input type="date">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>출동소요시간</th>
+                                        <td colspan="3">
+                                            <input type="time"><span>~</span><input type="time">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <th>화재발생요일</th>
+                                        <td class="boxmodelDay" colspan="3">
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>월</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>화</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>수</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>목</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>금</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>토</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>일</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>계절구분</th>
+                                        <td class="boxmodelSeason" colspan="3">
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>봄 (3~5월)</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>여름 (6~8월)</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>가을 (9~11월)</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox">
+                                                <span>겨울(12~2월)</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>화재유형</th>
+                                        <td colspan="3">
+                                            <div class="select">
+                                                <select name="slct" id="slct">
+                                                    <option selected disabled>선택</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                </select>
+                                            </div>
+                                            <div class="select">
+                                                <select name="slct" id="slct">
+                                                    <option selected disabled>선택</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                </select>
+                                            </div>
+                                            <div class="select">
+                                                <select name="slct" id="slct">
+                                                    <option selected disabled>선택</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+
+                            <a href="#" class="boxmodel_search">검색</a>
+                        </div>
+                        <div class="left__search boxmodel" id="leftSearchGis" style="display:none;">
+                        </div>
+                        <a href="#" class="left__btn--close"><span class="blind">패널조작버튼</span></a> <!-- 패널 조작버튼 추가 -->
+                    </div> <!-- // left -->
+                </div> <!-- // content -->
+                <div style="display: flex;">
+                    <div class="searchBox" style="width: 88%;">
+                        <input class="searchText" type="text" placeholder="검색어를 입력하세요."
+                            onkeypress="javascript:if(event.keyCode==13){fssObjects.searchBtn();}">
+                        <a href="#" class="search"><span class="blind">검색</span></a>
+                    </div>
+                    <div class="gubunDiv" style="width: 12%; display:flex; margin-left: 15px;">
+                        <button class="gubunBtn" id="gi_gookto">국토부</button>
+                        <button class="gubunBtn" id="gi_sobang">민원정보</button>
+                        <button class="gubunBtn" id="gi_hwaje">특별조사</button>
+                    </div>
+
+                </div>
+                <!--// searchBox -->
+
+                <h4>검색결과<span class="result"></span></h4>
+                <div class="resultWrap">
+                    <div class="resultCont">
+                        <div class="divTable" id="divTable">
+
+
+                        </div> <!-- // divTable -->
+                        <div class="gisTable" id="gisTable" style="display:none; position: relative;height: 100%;">
+                            <iframe id="gis_iFrame" src="" style="width: 100%; height: 100%; "></iframe>
+                        </div> <!-- // divTable -->
+                    </div><!-- // resultcont -->
+
+                    <div class="pageNation">
+                        <ul>
+
+                        </ul>
+                    </div><!-- // pageNation -->
+
+                </div><!-- // scrollWrap -->
+
+            </div><!-- // popupBox__content -->
+
+            <div class="popupBox__bottom">
+                <div class="btnArea js">
+                    <a class="btn__basic fl" style="display:none;">Back</a>
+                    <a class="btn__basic fr">Close</a>
+                </div><!-- // bthArea -->
+            </div><!-- // popupBox__bottom -->
+
+        </div><!-- // popupBox -->
+        <div class="popupBox style2" id="infoOffsDialog" style="background:#606060;display:none;">
+            <div class="popupBox__top">
+                <h3>소방대상물 검색 도움말</h3>
+                <a href="#" class="popup__close2" title="닫기"><span class="blind">닫기</span></a>
+            </div><!-- // popupBox__top -->
+
+            <div id="infoOffsScroll" class="scrollCont">
+                <div class="scrollbar">
+                    <div class="track">
+                        <div class="thumb">
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="viewport">
+                    <div class="overview" id="infoOffsContext">
+                        <p>소방대상물 검색 화면에서 사용 하는 검색 연산자 예시 입니다.</p>
+
+                        <p><strong>주소 검색 :</strong><br />
+                            경기도 수원시 팔달구 매산로3가 44-2<br />
+                            &nbsp;- 띄어쓰기로 여러 단어 입력 시 위치에 관계 없이 모든 단어가 포함된 대상물 검색<br />
+                            &nbsp;- 띄어쓰기는 기본적으로 &ldquo;AND&rdquo; 연산 처리(대문자만 인식)<br />
+                            &nbsp;- 가장 정확도가 높은 순서로 표시</p>
+
+                        <p>&quot;경기도 수원시 팔달구 매산로3가 44-2&quot;<br />
+                            &nbsp;- 주소를 쌍따옴표(&ldquo;)로 감쌀 경우 구, 문장에 언어처리를 적용하여 단어가 순서대로 인접하여 배치된 문서 검색<br />
+                            &nbsp;- ~도, ~시, ~구 , ~동은 생략 가능<br />
+                            &nbsp;&nbsp; &quot;경기 수원 팔달 매산로3가 44-2&quot;</p>
+
+                        <p><br />
+                            <strong>한 단어 검색 :</strong><br />
+                            - 검색단어가 포함된 대상물만 검색<br />
+                            EX) 소방청</p>
+
+                        <p>- &quot;*&quot; 연산자를 사용 할 경우 검색단어와 유사한 단어를 검색<br />
+                            EX) 소방청* , *소방청*</p>
+
+                        <p><br />
+                            <strong>여러단어 검색 :</strong><br />
+                            모두 포함(AND) : 띄어쓰기로 여러 단어 입력 시 위치에 관계 없이 모든 단어가 포함된 문서 검색. &ldquo;AND&rdquo;를 반드시 대문자로 입력하여야
+                            함. 띄어쓰기는 기본적으로 &ldquo;AND&rdquo; 연산 처리됨.<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            예) 연세대학교 원주</p>
+
+                        <p>한 단어 이상 포함(OR) : 띄어쓰기로 여러 단어 입력 시 위치에 관계 없이 한 단어 이상이 포함된 문서 검색. &ldquo;OR&rdquo;를 반드시 대문자로
+                            입력하여야 함.<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            예) 연세대학교 OR 원주</p>
+
+                        <p>단어 제외(NOT) : 단어가 포함되지 않은 문서 검색. &ldquo;NOT&rdquo;은 반드시 대문자로 검색.<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            예) 연세대학교 AND NOT 원주</p>
+
+                        <p>문장검색(&ldquo;&rdquo;) : 구, 문장을 쌍따옴표(&ldquo;)로 감쌀 경우 구, 문장에 언어처리를 적용하여 단어가 순서대로 인접하여 배치된 문서
+                            검색.<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &quot;연세대학교 원주&quot;로 검색&nbsp; &quot;원주 연세대학교&quot;로는 검색 되지 않음</p>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <c:import url="/WEB-INF/views/fss/fssObjectsDetail.jsp" />
+
+    </div>
+    <!-- // popupWrap -->
+    <form id="opgParameters" method="POST" action="<%=request.getContextPath() %>/views/web/fss/opg">
+        <input type="hidden" name="APIKEY" value="">
+        <input type="hidden" name="USERID" value="">
+        <input type="hidden" name="tBassAddr" value="">
+        <input type="hidden" name="tRoadAddr" value="">
+        <input type="hidden" name="tEtcAddr" value="">
+        <input type="hidden" name="tDeptYn" value="">
+        <input type="hidden" name="tFon" value="">
+        <input type="hidden" name="tBdngYn" value="">
+        <input type="hidden" name="tMinwonYn" value="">
+        <input type="hidden" name="tSpjosaYn" value="">
+        <input type="hidden" name="tOfmn" value="">
+        <input type="hidden" name="tEgrc" value="">
+    </form>
+
+
+</body>
+
+</html>

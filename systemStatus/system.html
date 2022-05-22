@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/system.css"> -->
+</head>
+
+<body>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li,
+        ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .after::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .VisualWrap {
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+            box-sizing: border-box;
+            /* overflow: hidden; */
+        }
+
+        /* 정상 & 경고 창 */
+        .VisualWrap>div {
+            width: 50%;
+            float: left;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            text-align: center;
+            background: #f7f7f7;
+            line-height: 70px;
+        }
+
+        .VisualWrap>div:first-child {
+            border-right: 0;
+        }
+
+        .VisualWrap>div>h1 {
+            width: 40%;
+            float: left;
+            border-right: 1px solid #ddd;
+            box-sizing: border-box;
+            color: #555;
+        }
+
+        .VisualWrap>div>.count {
+            width: 60%;
+            float: left;
+            font-weight: bold;
+            font-size: 32px;
+        }
+
+        .normal .count {
+            color: #40ade4;
+        }
+
+        .warning .count {
+            color: orangered;
+        }
+
+        /* 내용 */
+        .Visual {
+            position: absolute;
+            width: calc(100% - 100px);
+            height: calc(100% - 200px);
+            top: 150px;
+            float: left;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #f7f7f7;
+            overflow-y: auto;
+        }
+
+        .Visual>li {
+            width: 18.4%;
+            /*  각 박스 높이 변경 */
+            height: 21.3%;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            float: left;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            background: #fff;
+        }
+
+        .Visual>li:nth-of-type(5) {
+            margin-right: 0;
+        }
+
+        .Visual>li:nth-of-type(10) {
+            margin-right: 0;
+        }
+
+        .Visual>li:nth-of-type(15) {
+            margin-right: 0;
+        }
+
+        .Visual>li:nth-of-type(20) {
+            margin-right: 0;
+        }
+
+        .Visual>li>h6 {
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            box-sizing: border-box;
+            color: #555;
+            font-size: 13px;
+        }
+        
+        .Visual>li>p {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            color: #40ade4;
+            box-sizing: border-box;
+            font-size: 13px;
+        }
+    </style>
+
+    <div class="VisualWrap after">
+        <div class="normal after">
+            <h1>정상</h1>
+            <div class="count">19</div>
+        </div>
+        <div class="warning after">
+            <h1>경고</h1>
+            <div class="count">0</div>
+        </div>
+
+        <ul class="Visual">
+            <li>
+                <h6>긴급이송망_송신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>긴급이송망_수신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>긴급이송망_수신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>긴급이송망_수신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>소방현장통합 > 119</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>소방현장통합_송신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>소방현장통합_수신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>소방현장통합_송신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>#INC1 다매체 신고접수</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>#EXC1 다메체 신고접수</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>긴급이송망_송신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>소방현장통합 > 119</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>소방현장통합_송신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>소방현장통합_수신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li>
+                <h6>긴급이송망_수신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li style="margin-bottom: 0;">
+                <h6>소방현장통합_송신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li style="margin-bottom: 0;">
+                <h6>소방현장통합_송신</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li style="margin-bottom: 0;">
+                <h6>119DB > 소방현장통합</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li style="margin-bottom: 0;">
+                <h6>119DB > 소방현장통합</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+            <li style="margin-bottom: 0;">
+                <h6>119DB > 소방현장통합</h6>
+                <div>
+                    <!-- 이미지 넣을 자리 -->
+                </div>
+                <p>운영</p>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

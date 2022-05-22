@@ -1,0 +1,27 @@
+/* Tiny Scrollbar */
+
+
+.scrollCont .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; width: 100%; }
+.scrollCont .scrollbar{ background: transparent; position: relative; background-position: 0 0; float: right; width: 15px; }
+.scrollCont .track { background: transparent; height: 100%; width:13px; position: relative; padding: 0 1px; }
+.scrollCont .thumb { background: #333333; border-radius: 20px; height: 20px; width: 10px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: 5px; }
+.scrollCont .thumb .end { background: transparent; overflow: hidden; height: 5px; width: 25px; }
+.scrollCont .disable { display: none; }
+.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+
+#scrollbar1 { width: 100%; margin-bottom: 10px;  }
+#scrollbar1 .viewport { width: calc(100% - 20px); height: 580px; overflow: hidden; position: relative; }
+#scrollbar_left { width: 100%; margin-bottom: 10px;  }
+#scrollbar_left .viewport { width: calc(100% - 20px); height: 550px; overflow: hidden; position: relative; }
+#scrollbarstyle2 { width: 100%; margin-bottom: 10px;  }
+#scrollbarstyle2 .viewport { width: calc(100% - 20px); height:380px; overflow: hidden; position: relative; }
+
+#scrollbar2 { width: 100%; margin-bottom: 10px;  }
+#scrollbar2 .viewport { width: calc(100% - 20px); height: 705px; overflow: hidden; position: relative; }
+
+#scrollbar3 { width: 100%; margin-bottom: 10px;  }
+#scrollbar3 .viewport { width: calc(100% - 20px); height: 684px; overflow: hidden; position: relative; }
+
+#infoOffsScroll { width: 100%; margin-bottom: 10px;  }
+#infoOffsScroll .viewport { width: calc(100% - 30px); margin: 10px; height: 500px; background: #000000; overflow: hidden; position: relative; }
+

@@ -1,0 +1,869 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>통계지도</title>
+
+    <link type="text/css" href="clickHover.css" rel="stylesheet">
+
+    <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="clickHover.js"></script>
+
+</head>
+
+<body>
+    <div class="popup w200 ui-draggable" id="additional_layers_popup"
+        style="display: block; z-index: 99; height: auto;">
+        <div class="bar ui-draggable-handle">
+            <div class="title"><i class="fas fa-layer-group"></i><span id="additional_layers_popup_title"
+                    style="font-size: 9px;">수난구조 장소별 현황-시계열분석</span></div>
+            <button class="closePop" onclick="close_additional_layers_popup()" style="cursor:pointer;">닫기</button>
+        </div><!-- //bar -->
+        <div class="sub popContents" id="stat_layer_content">
+            <li>
+                <a class="" href="#">소계<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2" style="display: none;">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;6&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="" href="#">공동주택<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;7&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;8&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;9&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 소계&quot;,&quot;10&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- undefined&quot;,&quot;11&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="" href="#">단독주택<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;12&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;13&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;14&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 소계&quot;,&quot;15&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- undefined&quot;,&quot;16&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="" href="#">도로, 철도<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;17&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 수상표류</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;18&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;19&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 소계&quot;,&quot;20&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- undefined&quot;,&quot;21&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 소계&quot;,&quot;22&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 안전구조&quot;,&quot;23&quot;)">• 안전구조</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 기타&quot;,&quot;24&quot;)">• 기타</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- undefined&quot;,&quot;25&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="" href="#">하천,바다<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;26&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 물놀이 익수</a>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;27&quot;)">• 소계</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 사망&quot;,&quot;28&quot;)">• 사망</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 안전구조&quot;,&quot;29&quot;)">• 안전구조</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;30&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li>
+                        <a href="#" style="cursor:pointer">└ 야영중 고립</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 소계&quot;,&quot;31&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 안전구조&quot;,&quot;32&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- undefined&quot;,&quot;33&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 어패류 채취 익수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 소계&quot;,&quot;34&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 사망&quot;,&quot;35&quot;)">• 사망</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 안전구조&quot;,&quot;36&quot;)">• 안전구조</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 경상&quot;,&quot;37&quot;)">• 경상</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 중상&quot;,&quot;38&quot;)">• 중상</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 기타&quot;,&quot;39&quot;)">• 기타</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- undefined&quot;,&quot;40&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 수상표류</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;하천,바다- 소계&quot;,&quot;41&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;하천,바다- 안전구조&quot;,&quot;42&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;하천,바다- undefined&quot;,&quot;43&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;논밭,축사- 소계&quot;,&quot;44&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;논밭,축사- undefined&quot;,&quot;45&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 차량추락 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;판매시설- 소계&quot;,&quot;46&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;판매시설- 사망&quot;,&quot;47&quot;)">• 사망</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;판매시설- 안전구조&quot;,&quot;48&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;판매시설- 중상&quot;,&quot;49&quot;)">• 중상</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;판매시설- 기타&quot;,&quot;50&quot;)">• 기타</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;판매시설- undefined&quot;,&quot;51&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 계곡·급류사고</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도시공원- 소계&quot;,&quot;52&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도시공원- 안전구조&quot;,&quot;53&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도시공원- undefined&quot;,&quot;54&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 선박조난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;운동시설- 소계&quot;,&quot;55&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;운동시설- 사망&quot;,&quot;56&quot;)">• 사망</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;운동시설- 안전구조&quot;,&quot;57&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;운동시설- 기타&quot;,&quot;58&quot;)">• 기타</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;운동시설- undefined&quot;,&quot;59&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 동력수상레져</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;숙박시설- 소계&quot;,&quot;60&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;숙박시설- 안전구조&quot;,&quot;61&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;숙박시설- undefined&quot;,&quot;62&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 무동력수상레져</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;업무시설- 소계&quot;,&quot;63&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;업무시설- 안전구조&quot;,&quot;64&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;업무시설- undefined&quot;,&quot;65&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- 소계&quot;,&quot;66&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- 사망&quot;,&quot;67&quot;)">• 사망</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- 안전구조&quot;,&quot;68&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- 경상&quot;,&quot;69&quot;)">• 경상</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- 중상&quot;,&quot;70&quot;)">• 중상</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- 행방불명&quot;,&quot;71&quot;)">• 행방불명</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- 기타&quot;,&quot;72&quot;)">• 기타</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- 기타&quot;,&quot;73&quot;)">• 기타</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;노유자시설- undefined&quot;,&quot;74&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">논밭,축사<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;75&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;76&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;77&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">판매시설<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;78&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;79&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;80&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">도시공원<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;81&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 물놀이 익수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;82&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;83&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 차량추락 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 소계&quot;,&quot;84&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- undefined&quot;,&quot;85&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 소계&quot;,&quot;86&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 사망&quot;,&quot;87&quot;)">• 사망</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 안전구조&quot;,&quot;88&quot;)">• 안전구조</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- undefined&quot;,&quot;89&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">운동시설<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;90&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;91&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;92&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">숙박시설<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;93&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;94&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;95&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">업무시설<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;96&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;97&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;98&quot;)">• </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 소계&quot;,&quot;99&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- undefined&quot;,&quot;100&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">노유자시설<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;101&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;102&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;103&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">운수시설<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;104&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;105&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 안전구조&quot;,&quot;106&quot;)">• 안전구조</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;107&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">교육·연구시설<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;108&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;109&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;110&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">작업·공사장<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;111&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;112&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;113&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 소계&quot;,&quot;114&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- undefined&quot;,&quot;115&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#">기타<i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;116&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 어패류 채취 익수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;117&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;118&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 시설물 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- 소계&quot;,&quot;119&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;단독주택- undefined&quot;,&quot;120&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 차량추락 침수</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- 소계&quot;,&quot;121&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;도로, 철도- undefined&quot;,&quot;122&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;하천,바다- 소계&quot;,&quot;123&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;하천,바다- 사망&quot;,&quot;124&quot;)">• 사망</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;하천,바다- 안전구조&quot;,&quot;125&quot;)">• 안전구조</a>
+                            </li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;하천,바다- 경상&quot;,&quot;126&quot;)">• 경상</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;하천,바다- undefined&quot;,&quot;127&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="" href="#"><i class="fas fa-caret-up"></i></a>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 소계</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;소계- 소계&quot;,&quot;128&quot;)">• 소계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sub sub2">
+                    <li><a href="#" style="cursor:pointer">└ 기타 수난</a>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- 소계&quot;,&quot;129&quot;)">• 소계</a></li>
+                        </ul>
+                        <ul class="sub sub3">
+                            <li><a href="#" style="cursor:pointer"
+                                    onclick="fn_view_stat_layer(&quot;공동주택- undefined&quot;,&quot;130&quot;)">• </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </div>
+    </div>
+
+</body>
+
+
+</html>

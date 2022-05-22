@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/facility.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/facility.js"></script>
+</head>
+
+<body>
+
+    <div class="facility_Wrap">
+        <!-- 소방시설현황 -->
+        <div class="fa_pre">
+            <h1>소방시설등의 현황</h1>
+            <!-- 소방시설 -->
+            <div class="fire_fa">
+                <h4>1. 소방시설</h4>
+                <p>※ 특정소방대상물에 설치된 소방시설에만 체크합니다.</p>
+                <table>
+                    <thead>
+                        <th>
+                            <p>구분</p>
+                        </th>
+
+                        <th>
+                            <p>해당설비</p>
+                        </th>
+
+                        <th>
+                            <p>비고</p>
+                        </th>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th>
+                                <p>소화설비</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="ck1">
+                                    <p>소화기구 (소화기, 자확, 간이)</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>경보설비</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="ck2">
+                                    <p>비상경보설비</p>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="ck2">
+                                    <p>단독경보형감지기</p>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="ck2">
+                                    <p>가스누설경보기</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>피난구조설비</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="ck3">
+                                    <p>피난기구</p>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="ck3">
+                                    <p>유도등</p>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="ck3">
+                                    <p>유도표지</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>소화활동설비</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="ck4">
+                                    <p>연결살수설비</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>기타</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="ck5">
+                                    <p>피난 · 방화시설</p>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="ck5">
+                                    <p>방염</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- 소방시설 -->
+
+            <!-- 안전시설 -->
+            <div class="safe_fa">
+                <h4>2. 안전시설 (다중이용업소)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <p>구분</p>
+                            </th>
+                            <th>
+                                <p>해당설비</p>
+                            </th>
+                            <th>
+                                <p>비고</p>
+                            </th>
+                            <th>
+                                <p>구분</p>
+                            </th>
+                            <th>
+                                <p>해당설비</p>
+                            </th>
+                            <th>
+                                <p>비고</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">
+                                <p>소화설비</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>소화기 또는 자동확산소화기</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <th rowspan="2">
+                                <p></p>비상구</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>방화문</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>간이스프링클러설비</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>비상구 (비상탈출구)</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th rowspan="2">
+                                <p>경보설비</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>비상경보설비 또는 자동화재탐지설비</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <th rowspan="6">
+                                <p>기타</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>영업장 내부 피난통로</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>가스누설경보기</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>영상음향차단장치</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th rowspan="4">
+                                <p>피난구조설비</p>
+                            </th>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>피난기구</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>누전차단기</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>피난유도선</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>창문</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>유도등, 유도표지 또는 비상조명등</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>피난안내도, 피난안내영상물</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>휴대용비상조명등</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <p>방염물품</p>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- 안전시설 -->
+        </div><!-- 소방시설현황 -->
+
+        <!-- 소방시설등의 점검결과 -->
+        <div class="fa_result">
+            <h1>소방시설등의 점검결과</h1>
+
+            <div class="exam_info">
+                <h4>1. 점검정보</h4>
+                <p>※ 특정소방대상물에 설치된 소방시설에만 체크합니다.</p>
+                <table>
+                    <tr>
+                        <th>
+                            <p>점검일자</p>
+                        </th>
+                        <td colspan="4">
+                            <input type="date">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="4">
+                            <p>점검자</p>
+                        </th>
+                        <th>
+                            <p>소속</p>
+                        </th>
+                        <th>
+                            <p>계급</p>
+                        </th>
+                        <th>
+                            <p>성명</p>
+                        </th>
+                        <th>
+                            <p>서명 (인)</p>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="exam_result">
+                <h4>2. 점검결과</h4>
+                <table>
+                    <thead>
+                        <th>
+                            <p>구분</p>
+                        </th>
+                        <th>
+                            <p>시설별 번호</p>
+                        </th>
+                        <th>
+                            <p>불량내용</p>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <p>소화설비</p>
+                            </th>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>경보설비</p>
+                            </th>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>피난구조설비</p>
+                            </th>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>소화활동설비</p>
+                            </th>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>기타</p>
+                            </th>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- 소방시설등의 점검결과 -->
+    </div>
+
+
+</body>
+
+</html>

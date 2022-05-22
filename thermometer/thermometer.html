@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/thermometer.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/thermometer.js"></script>
+</head>
+
+<body>
+
+    <div id="thermoWrap" class="after">
+
+        <!-- 왼쪽 미터기 바 -->
+        <div class="thermometer">
+            <ul id="redThermo" class="on">
+                <li class="ther900" style="background: #cd1103;">
+                    <p>900</p>
+                </li>
+                <li class="ther800" style="background: #d53212;">
+                    <p>800</p>
+                </li>
+                <li class="ther700" style="background: #dd5321;">
+                    <p>700</p>
+                </li>
+                <li class="ther600" style="background: #e67430;">
+                    <p>600</p>
+                </li>
+                <li class="ther500" style="background: #ee953f;">
+                    <p>500</p>
+                </li>
+                <li class="ther400" style="background: #f6b64e;">
+                    <p>400</p>
+                </li>
+                <li class="ther300" style="background: #ffd75d;">
+                    <p>300</p>
+                </li>
+            </ul>
+
+            <ul id="greenThermo">
+                <li class="ther900" style="background: #0e4000;">
+                    <p>900</p>
+                </li>
+                <li class="ther800" style="background: #325e20;">
+                    <p>800</p>
+                </li>
+                <li class="ther700" style="background: #577c40;">
+                    <p>700</p>
+                </li>
+                <li class="ther600" style="background: #7c9a60;">
+                    <p>600</p>
+                </li>
+                <li class="ther500" style="background: #a0b880;">
+                    <p>500</p>
+                </li>
+                <li class="ther400" style="background: #c5d6a0;">
+                    <p>400</p>
+                </li>
+                <li class="ther300" style="background: #eaf5c0;">
+                    <p>300</p>
+                </li>
+            </ul>
+
+            <ul id="blueThermo">
+                <li class="ther900" style="background: #004574;">
+                    <p>900</p>
+                </li>
+                <li class="ther800" style="background: #225b82;">
+                    <p>800</p>
+                </li>
+                <li class="ther700" style="background: #447291;">
+                    <p>700</p>
+                </li>
+                <li class="ther600" style="background: #6688a0;">
+                    <p>600</p>
+                </li>
+                <li class="ther500" style="background: #889fae;">
+                    <p>500</p>
+                </li>
+                <li class="ther400" style="background: #aab5bd;">
+                    <p>400</p>
+                </li>
+                <li class="ther300" style="background: #cccccc;">
+                    <p>300</p>
+                </li>
+            </ul>
+
+            <ul id="purpleThermo">
+                <li class="ther900" style="background: #230064;">
+                    <p>900</p>
+                </li>
+                <li class="ther800" style="background: #3f2275;">
+                    <p>800</p>
+                </li>
+                <li class="ther700" style="background: #5b4486;">
+                    <p>700</p>
+                </li>
+                <li class="ther600" style="background: #776698;">
+                    <p>600</p>
+                </li>
+                <li class="ther500" style="background: #9388a9;">
+                    <p>500</p>
+                </li>
+                <li class="ther400" style="background: #afaaba;">
+                    <p>400</p>
+                </li>
+                <li class="ther300" style="background: #cccccc;">
+                    <p>300</p>
+                </li>
+            </ul>
+
+            <ul id="navyThermo">
+                <li class="ther900" style="background: #00076a;">
+                    <p>900</p>
+                </li>
+                <li class="ther800" style="background: #22277a;">
+                    <p>800</p>
+                </li>
+                <li class="ther700" style="background: #44488a;">
+                    <p>700</p>
+                </li>
+                <li class="ther600" style="background: #66699b;">
+                    <p>600</p>
+                </li>
+                <li class="ther500" style="background: #888aab;">
+                    <p>500</p>
+                </li>
+                <li class="ther400" style="background: #aaabbb;">
+                    <p>400</p>
+                </li>
+                <li class="ther300" style="background: #cccccc;">
+                    <p>300</p>
+                </li>
+            </ul>
+
+            <ul id="brownThermo">
+                <li class="ther900" style="background: #783300;">
+                    <p>900</p>
+                </li>
+                <li class="ther800" style="background: #8e5323;">
+                    <p>800</p>
+                </li>
+                <li class="ther700" style="background: #a47347;">
+                    <p>700</p>
+                </li>
+                <li class="ther600" style="background: #ba936b;">
+                    <p>600</p>
+                </li>
+                <li class="ther500" style="background: #d0b38e;">
+                    <p>500</p>
+                </li>
+                <li class="ther400" style="background: #e6d3b2;">
+                    <p>400</p>
+                </li>
+                <li class="ther300" style="background: #fdf3d6;">
+                    <p>300</p>
+                </li>
+            </ul>
+
+            <div class="text">
+                <p>건수</p>
+            </div>
+        </div><!-- 왼쪽 미터기 바 -->
+
+        <!-- 오른쪽 색 버튼 -->
+        <ul class="thermoButton">
+            <li>
+                <a href="#redThermo" style="background: #cd1103;" class="on">
+                    <img src="img/check-solid.png" alt="체크아이콘">
+                </a>
+            </li>
+            <li>
+                <a href="#greenThermo" style="background:  #0e4000;">
+                    <img src="img/check-solid.png" alt="체크아이콘">
+                </a>
+            </li>
+            <li>
+                <a href="#blueThermo" style="background: #004574;">
+                    <img src="img/check-solid.png" alt="체크아이콘">
+                </a>
+            </li>
+            <li>
+                <a href="#purpleThermo" style="background: #230064;">
+                    <img src="img/check-solid.png" alt="체크아이콘">
+                </a>
+            </li>
+            <li>
+                <a href="#navyThermo" style="background: #00076a;">
+                    <img src="img/check-solid.png" alt="체크아이콘">
+                </a>
+            </li>
+            <li>
+                <a href="#brownThermo" style="background: #783300;">
+                    <img src="img/check-solid.png" alt="체크아이콘">
+                </a>
+            </li>
+        </ul><!-- 오른쪽 색 버튼 -->
+
+    </div>
+
+    <!-- 팝업창 -->
+    <button class="popupButton">버튼</button>
+
+    <div class="Thermo_popUp_Wrap">
+        <div class="Thermo_popUp">
+            <h1>팝업창</h1>
+
+            <ul class="Thermo_popUp_inner">
+                <li>
+                    <h2>content 1</h2>
+                    <p>내용을 입력하세요.</p>
+                    <img src="img/img.jpg" alt="">
+                </li>
+
+                <li>
+                    <h2>content 2</h2>
+                    <p>내용을 입력하세요.</p>
+                    <img src="img/2778C3345902CAD121.jpeg" alt="이미지1">
+                </li>
+            </ul>
+
+            <button class="Thermo_close"></button>
+        </div>
+
+    </div><!-- 팝업창 -->
+
+</body>
+
+</html>

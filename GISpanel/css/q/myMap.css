@@ -1,0 +1,114 @@
+.tooltip.tooltip-static{
+	font-size: 20px;
+    background-color: rgba(0,69,151,0.7);
+    padding: 5px;
+    color: springgreen;
+    border-radius: 5px;
+}
+
+.tooltip.tooltip-measure{font-size: 20px;
+    background-color: rgba(0,69,151,0.7);
+    padding: 5px;
+    color: springgreen;
+    border-radius: 5px;
+}
+    
+.tooltip-mea{
+	font-size: 20px;
+    background-color: rgba(0,69,151,0.7);
+    padding: 5px;
+    color: springgreen;
+    border-radius: 5px;
+}
+
+.tooltip-cir{
+	font-size: 20px;
+    background-color: rgba(8,81,230,0.6);
+    padding: 0px;
+    color: white;
+    border-radius: 5px;
+/*     display:none; */
+}
+.tooltip-mea-mois{
+	font-size: 20px;
+    background-color: rgba(0,69,151,0.7);
+    padding: 5px;
+    color: springgreen;
+    border-radius: 5px;
+}
+
+.tooltip-cir-mois{
+	font-size: 20px;
+    background-color: rgba(8,81,230,0.6);
+    padding: 0px;
+    color: white;
+    border-radius: 5px;
+/*     display:none; */
+}
+.tooltip-tm_no{
+	background-color:rgba(0,9,0,0.6);
+	width:25px; height:25px;
+	border-radius:75px;
+	text-align:center;
+	font-size:12px; color:#fff;
+	vertical-align:middle;
+	line-height:25px;
+}
+
+#select_mk{
+	text-align: center;
+}
+
+#address_tb{
+	table-layout:fixed;
+}
+.ad_table{
+	height:650px;
+}
+.ad_table tr{
+	cursor:pointer;
+}
+
+#dstmarker_move
+{
+	width:80px;
+	height:24px;
+	background:#2c5486;
+	box-shadow:1px 1px 5px rgba(0,0,0,0.7);
+	border:none;
+	border-radius:3px;
+	line-heoght:24px;text-align:center;
+	color:#fff;
+	position:absolute;
+	right:80px;
+	top:0
+}
+
+#Tm_userinfo a{
+	cursor:pointer;
+}
+
+#dst_registraction_div{
+	width:60px;
+	height:65px;
+	left:50px;
+	top:0;
+	position:absolute;
+	background-color:rgb(238,238,238);
+	font:bold 12px '맑은 고딕','Nanum Gothic', '나눔 고딕', '돋움', dotum;
+	color:#0851e6; 
+	border:2px solid rgb(171,164,164);
+	border-radius:5px;
+	
+	
+/* 	width:39px; */
+/* 	height:42px; */
+/* 	background:url(../img/map/btSiren.png) 0 0 no-repeat; */
+/* 	border:none; */
+/* 	text-indent: -9999px; */
+	
+	
+	
+	
+}
+

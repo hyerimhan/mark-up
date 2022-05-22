@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.darkBox {
+    padding: 10px;
+    background: #333333;
+    border: 1px solid #222222;
+}
+
+.darkBox h5 {
+	padding-bottom: 10px;
+  font-size: 18px;
+  color: #bbbbbb;
+  font-weight: 600;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #222222;
+}
+
+.dlType01 dd {
+    color: #bbbbbb;
+    float: right;
+    width: calc(100% - 140px);
+}
